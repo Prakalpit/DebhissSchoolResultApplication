@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Howdy {{ student_result.name }}</title>
+</head>
+<body>
+        <H1> Hi {{ student_result.name }} | class {{ student_result.grade_class }}</H1>
+    <div>
+        <p>
+            You got <strong>{{ student_result.gpa }}</strong> GPA <br>
+
+            View Result <br>
+            <iframe src="{{ student_result.grade_sheet.url }}#toolbar=0" height="400" width="400"></iframe>
+
+
+        </p>
+    </div>
+</body>
+</html>

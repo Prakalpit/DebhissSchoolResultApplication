@@ -1,0 +1,43 @@
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        .container{
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .title{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+  <h2 class="title">Sign up</h2>
+      <form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+      {% buttons %}
+    <button type="submit">Sign Up</button>
+      {% endbuttons %}
+  </form>
+      <hr>
+    Or, <a href="{% url 'login' %}">Login Instead</a>
+    <br>
+
+
+  </div>
+  <br><br>
+
+</body>
+</html>
