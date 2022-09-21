@@ -1,17 +1,14 @@
-{# Load the tag library #}
-{% load bootstrap5 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
     <title>Upload Results</title>
     <style>
         .container{
             margin-bottom: 9px;
-            margin-left: 22px;
+            margin-left: 33px;
             margin-right: 22px;
+            padding: 23px;
         }
 
         h2{
@@ -40,13 +37,11 @@
 
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-    {% bootstrap_form form %}
-
-    {% buttons %}
+        {{form.as_p}}
         <button type="submit">Submit</button>
-    {% endbuttons %}
+
 </form>
 </div>
-{% bootstrap_javascript %}
+
 </body>
 </html>
