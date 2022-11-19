@@ -7,20 +7,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .responsive-iframe {
+  position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+  width: 100%;
+}
+    </style>
     <title>Howdy | {{ student_result.name }}</title>
 </head>
 <body>
 
 <div>
-    <h2>
-        Hello, {{ student_result.name }} | class {{ student_result.grade_class }}
-    </h2><br>
     <h3>
-        Your GPA is {{ student_result.gpa }}
-    </h3>
-    <br><br><br>
+        Hello, {{ student_result.name }} | class {{ student_result.grade_class }}
+    </h3><br>
+    <h4>
+        Your GPA is {{ student_result.gpa }}<br>
+        {{ student_result.remarks }}
+    </h4>
+    <p></p><p></p><p></p>
     <hr>
-     <iframe src="{{ student_result.grade_sheet.url }}#toolbar=0" height="600" width="600"></iframe>
+    <br>
+     <iframe src="{{ student_result.grade_sheet.url }}#toolbar=0" height="600" width="600" class="responsive-iframe"></iframe>
 </div>
 
 </body>
