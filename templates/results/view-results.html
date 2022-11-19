@@ -19,35 +19,9 @@
         Your GPA is {{ student_result.gpa }}
     </h3>
     <br><br><br>
-    <button class="button" id="OnlineClassBTN">
-        View Your Result
-    </button>
+    <hr>
+     <iframe src="{{ student_result.grade_sheet.url }}#toolbar=0" height="600" width="600"></iframe>
 </div>
-
-<div class="AboutMeModal" id="OnlineClassModal">
-    <div class="modal-content">
-        <span class="closeBtn" id="closebtn__oc">&times;</span>
-        <br><br><br>
-        <iframe src="{{ student_result.grade_sheet.url }}#toolbar=0" height="432" width="432"></iframe>
-    </div>
-</div>
-
-<script>
-const OnlineClassModal = document.getElementById('OnlineClassModal');
-const modalBtnOC = document.getElementById('OnlineClassBTN');
-const CloseBtnOC = document.getElementById('closebtn__oc');
-
-modalBtnOC.addEventListener('click', OpenModalOC)
-CloseBtnOC.addEventListener('click', CloseModalOC)
-
-function OpenModalOC() {
-    OnlineClassModal.style.display ='block';
-}
-function CloseModalOC(){
-    OnlineClassModal.style.display ='none';
-}
-
-</script>
 
 </body>
 </html>

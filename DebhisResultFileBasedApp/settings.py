@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'result',
-    # 'bootstrap5',
     'accounts',
     'import_export',
+    'crispy_forms',
 ]
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -136,6 +136,7 @@ MEDIA_ROOT = 'media'
 # add these at very bottom of settings.py
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

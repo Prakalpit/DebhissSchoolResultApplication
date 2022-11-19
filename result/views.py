@@ -16,7 +16,7 @@ def home(request):
 
 def ResultPage(request):
     passw = request.POST.get('password')
-    passw = (passw.strip()).lower()
+    passw = (passw.strip()).upper()
     if Result.objects.filter(password=passw).exists():
         queryset = Result.objects.get(password=passw)
         context = {
